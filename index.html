@@ -1,0 +1,51 @@
+<html>
+<h1>Esqueceu a senha?</h1>
+
+<p>
+What is Serverless?
+A common-sense explanation of serverless architecture
+Whenever an application is built, it must be made available to users. Consider Facebook, which was created by Mark Zuckerburg in his Harvard dorm room — we wouldn’t have known about Facebook if he didn’t make it available for other people to use.
+In the traditional approach, an application developer pays a Hosting Company some amount of money to rent servers. He then deploys his app unto this server and every year or month, he has to pay renewal fees to the Hosting company, whether anyone uses his application or not.
+In his lecture as a guest lecturer at Harvard, Mark Zuckerburg gave some insights into some of the problems he encountered when Facebook began to grow. At this time, Facebook was only used by schools in the US.
+In his words:
+“But after we hit about like 30 or 50 schools, … [we realized that] some of the ways that stuff was set up just wasn’t as optimal as it could.
+So for example, when you have MySQL machines and Apache running on the same server, then if something happens to that server, then not only does the database for that school or the schools on that server just stop kind of responding in a way that will get you anything useful, but you can’t even load any web pages. So you get page not founds. And that kind of sucks.”
+Mark and his friends had to find a way to scale Facebook to handle the enormous request it was then receiving. They had to do so or Facebook risked death: people would start losing interest if the site was down (due to too much traffic) any time they visited. By maintaining and monitoring the servers themselves, they were spending time that they could have used to build more features on Facebook to make sure it was prepared for enormous traffic.
+Scaling an application is a major problem for any app developer. In the case of rented servers, this would mean renting more servers, deploying the app on the new servers, and making sure that there is data consistency across all servers.
+Welcome to Serverless
+Contrary to its name, Serverless does not mean the absence of servers (you still need servers in order for your app to be available online). It rather means that you don’t have to worry about server management, maintenance, monitoring, capacity planning, and scaling. You hand over these processes to a “serverless provider” and they take care of that for you.
+In other words, serverless computing lets you build applications without thinking of servers.
+You only pay for what you use
+I know you can already see the advantage in this, aside from making developers focus solely on what they do best: building apps, there is another good news. The Serverless architecture is a pay-per-use service, this means that if your app is on a serverless platform and it is not used, perhaps you haven’t gotten any user yet, you don’t pay anything. You pay lower on days with low usage, higher on days with high usage, and nothing on days with 0 usage!
+How does serverless work?
+You might be wondering if serverless providers are not losing money for hosting applications even when there is no usage. In the traditional approach, the application still needs to be ‘active’ on the servers all the time even when no one uses them and that is why hosting companies charge regardless.
+Serverless providers do not charge you anything when your app has zero usage because they don’t keep your app ‘active’ all the time. How?
+Serverless is event-driven: are you fit to be tied?
+I love stories and analogies and I believe that one of the episodes of the cartoon series, Tom and Jerry titled ‘Fit to be tied’ can help us in understanding how the serverless application works.
+In the episode, Jerry removes a tack from Spike’s paw. In gratitude, Spike gives Jerry a bell to ring when he’s in trouble. Each time Tom troubles Jerry, Jerry would ring the bell and Spike would rise from his rest to save Jerry from the hands of Tom. Spike would be resting the rest of the time and would only rise to help Jerry when he rings the bell.
+In serverless terms, we can say that the bell ringing is an ‘event’ and that ringing the bell means emitting an event. Spike then is an event listener. He is only ‘active’ (i.e saving Jerry) when an event is emitted.
+Your App? Just a serverless function
+Serverless providers treat your whole application as a function that is contained in some kind of ‘container’. This container contains everything your app needs for it to run and when this container is activated your app runs, otherwise it doesn’t. Simple.
+This means to automatically scale your application, the container just has to be replicated — as many times as needed.
+These containers are event-driven: they are only active when certain events are triggered, and for the rest of the time (like Tom’s old friend, Spike), they are inactive.
+What happens can be represented in pseudocode as:
+Some of the triggers that can trigger the execution of a serverless function include HTTP requests, database updates, file uploads to file storage, and other serverless functions. A function container is both an event emitter and event listener and so it can be a trigger too.
+Just as these vases have everything the plants need to grow, serverless containers have everything your app needs to run.
+Serverless Infrastructure Providers
+Serverless requires big and expensive infrastructure to provide its benefits, this is why most of the vendors are the ‘big guys’. The most popular infrastructures are Amazon’s AWS Lambda Function, Google’s Cloud Functions, Microsoft’s Azure Functions. AWS currently dominates the market.
+Sometimes, you should not go serverless
+Serverless comes with a lot of advantages and also have some disadvantages that we should discuss.
+One of the most discussed cons of serverless is ‘vendor lock-in’. With serverless, you are not in charge of your servers. This means you are not in control over server hardware, runtimes and runtime updates, concurrency, and resource limits. Your vendor decides all of these and when you are set up with a vendor, it might be difficult to shift to another vendor. You might be locked-in.
+Another disadvantage is latency. Using Tom and Jerry’s example, what would happen to Jerry when he is in trouble with Tom, rings the bell but Spike takes a long time to rise to his aid? Tom isn’t so nice. Sometime, your serverless application might take some time for it to start when triggered. You will have to deal with cold starts.
+You should however know that most of these disadvantages have workarounds and you can research them before considering going serverless.
+Conclusion
+We have learned what serverless architecture is, how it works, and why to use or not use it.
+To can check out the following articles to continue learning about it:
+When and why not to use serverless
+Serverless Computing — AWS
+Note: I used Facebook’s example to illustrate a point. Facebook maintains its servers and do not use any serverless providers. Originally published at https://solathecoder.hashnode.dev.
+JavaScript In Plain English
+Did you know that we have three publications and a YouTube channel? Find links to everything at plainenglish.io!
+</p>
+
+</html>
